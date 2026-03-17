@@ -89,6 +89,7 @@
 # backbone sâu dùng C2f_CA, head cuối dùng C3k2_CA
 
 nc: 80
+scale: s
 scales:
   n: [0.50, 0.25, 1024]
   s: [0.50, 0.50, 1024]
