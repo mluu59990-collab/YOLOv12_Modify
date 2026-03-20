@@ -147,9 +147,9 @@ backbone:
   - [-1, 1, TorchVision, [960, mobilenet_v3_large, DEFAULT, True, 2, True]]
 
 head:
-  - [0, 1, Index, [40, 4]]
-  - [0, 1, Index, [112, 10]]
-  - [0, 1, Index, [960, 16]]
+  - [0, 1, Index, [40, 6]]
+  - [0, 1, Index, [112, 12]]
+  - [0, 1, Index, [960, 17]]
 
   - [-1, 1, nn.Upsample, [None, 2, "nearest"]]
   - [[-1, 2], 1, Concat, [1]]
