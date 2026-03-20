@@ -74,6 +74,10 @@ from ultralytics.nn.modules import (
     C2f_CBAM,
     C3k2_CBAM,
     A2C2f_ECA,
+    EMA,
+    C3k2_EMA,
+    C2f_EMA,
+
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -989,10 +993,12 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             C2,
             C2f,
             C2f_ECA,
+            C2f_EMA,
             C2f_CA,
             C2f_CBAM,
             C3k2,
             C3k2_ECA,
+            C3k2_EMA,
             C3k2_CA,
             C3k2_CBAM,
             RepNCSPELAN4,
@@ -1032,10 +1038,12 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 C2,
                 C2f,
                 C2f_ECA,
+                C2f_EMA,
                 C2f_CA,
                 C2f_CBAM,
                 C3k2,
                 C3k2_ECA,
+                C3k2_EMA,
                 C3k2_CA,
                 C3k2_CBAM,
                 C2fAttn,
@@ -1052,7 +1060,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             }:
                 args.insert(2, n)  # number of repeats
                 n = 1
-            if m in {C3k2, C3k2_ECA, C3k2_CA, C3k2_CBAM}:
+            if m in {C3k2, C3k2_ECA, C3k2_EMA, C3k2_CA, C3k2_CBAM}:
                 legacy = False
                 if scale in "mlx":
                     args[3] = True
