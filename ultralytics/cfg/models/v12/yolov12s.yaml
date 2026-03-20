@@ -147,7 +147,7 @@ backbone:
   - [-1, 1, TorchVision, [960, mobilenet_v3_large, DEFAULT, True, 2, True]]
 
 head:
-  - [0, 1, Index, [40, 6]]
+  - [0, 1, Index, [40, 5]]
   - [0, 1, Index, [112, 12]]
   - [0, 1, Index, [960, 17]]
 
